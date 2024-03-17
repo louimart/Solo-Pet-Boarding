@@ -18,7 +18,7 @@ function LandingPage() {
       <h2>{heading}</h2>
 
       <div className="grid">
-        <div className="grid-col grid-col_8">
+        <section className="grid-col grid-col_12">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
@@ -30,7 +30,10 @@ function LandingPage() {
             Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
             luctus. Duis a sapien metus.
           </p>
+        </section>
 
+        <section className="grid-col grid-col_12">
+        <h2>Say Hi to our friends!</h2>
           <p>
             Praesent consectetur orci dui, id elementum eros facilisis id. Sed
             id dolor in augue porttitor faucibus eget sit amet ante. Nunc
@@ -41,7 +44,24 @@ function LandingPage() {
             lobortis augue mi vel felis. Duis ultrices sapien at est convallis
             congue.
           </p>
+        </section>
 
+        <section className="grid-col grid-col_12">
+        <h2>Services</h2>
+          <p>
+            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
+            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
+            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
+            finibus metus facilisis. Nullam eget lectus non urna rhoncus
+            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
+            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
+            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
+            congue.
+          </p>
+        </section>
+
+        <section className="grid-col grid-col_12">
+          <h2>Rates</h2>
           <p>
             Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
             Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
@@ -50,8 +70,8 @@ function LandingPage() {
             non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
             amet nisi.
           </p>
-        </div>
-        <div className="grid-col grid-col_4">
+        </section>
+        <div className="grid-col grid-col_12">
           <RegisterForm />
 
           <center>

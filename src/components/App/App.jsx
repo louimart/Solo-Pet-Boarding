@@ -65,6 +65,7 @@ function App() {
             exact
             path="/info"
           >
+            {/* check is_admin at page level */}
             <InfoPage />
           </ProtectedRoute>
 

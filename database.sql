@@ -26,7 +26,7 @@ CREATE TABLE "pet" (
     "weight" INT NOT NULL,
     "detail" VARCHAR (500) NOT NULL,
     "rabies" BOOLEAN DEFAULT FALSE,
-    "bortella" BOOLEAN DEFAULT FALSE,
+    "bordetella" BOOLEAN DEFAULT FALSE,
     "distemper" BOOLEAN DEFAULT FALSE
 );
 
@@ -78,3 +78,16 @@ CREATE TABLE "reviews" (
     "stars" INT NOT NULL,
     "comments" VARCHAR (500) NOT NULL
 );
+
+INSERT INTO "user" ("username", "password", "first_name", "last_name", "email", "phone_number", "street", "city", "state")
+VALUES
+('doglover', 'iheartdog123', 'mary', 'smith', 'msmith@gmail.com', '7631234567', '1234 jolly lane', 'minneapolis', 'mn'),
+('catlover', 'iheartcat123', 'john', 'smith', 'jsmith@gmail.com', '6121234567', '1234 maple lane', 'minneapolis', 'mn'),
+('loverofanimals', 'iheartAnimals123', 'joe', 'jones', 'jjones@gmail.com', '7631238901', '4567 jolly lane', 'minneapolis', 'mn')
+;
+
+INSERT INTO "pet" ("dog", "cat", "pet_name", "age", "weight", "detail", "rabies", "bordetella", "distemper")
+VALUES
+(TRUE, FALSE, 'bailey', 7, 15, 'needs to go on walk to poop and likes to sleep in his own bed', TRUE, TRUE, TRUE),
+(FALSE, TRUE, 'sina', 10, 15, 'half can of wet food twice a day. shot once a day', TRUE, TRUE, TRUE)
+;

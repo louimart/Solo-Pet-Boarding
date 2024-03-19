@@ -24,6 +24,13 @@ function RegisterForm() {
         username: username,
         password: password,
         userType: userType,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        streetAddress: streetAddress,
+        city: city,
+        state: state,
       },
     });
   }; // end registerUser

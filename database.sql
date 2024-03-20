@@ -19,7 +19,7 @@ CREATE TABLE "user" (
     "street" VARCHAR (50) NOT NULL,
     "city" VARCHAR (25) NOT NULL,
     "state" VARCHAR (25) NOT NULL,
-    "user_type" VARCHAR (25)
+    "user_type" VARCHAR (25) NOT NULL
 );
 
 CREATE TABLE "pet" (
@@ -44,9 +44,9 @@ CREATE TABLE "vaccine" (
 );
 
 CREATE TABLE "user_pets" (
-    "id" SERIAL PRIMARY KEY,
-    "user_id" INT REFERENCES "user",
-    "pet_id" INT REFERENCES "pet"
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user",
+  "pet_id" INT REFERENCES "pet"
 );
 
 CREATE TABLE "pet_boarding" (

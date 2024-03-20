@@ -13,6 +13,10 @@ function LandingPage() {
     history.push('/login');
   };
 
+  const onRequestMeet = (event) => {
+    history.push('/requestForm');
+  };
+
   return (
     <div className="container">
       <h2>{heading}</h2>
@@ -78,6 +82,9 @@ function LandingPage() {
             <h4>Already a Member?</h4>
             <button className="btn btn_sizeSm" onClick={onLogin}>
               Login
+            </button>
+            <button className="btn btn_sizeSm" onClick={onRequestMeet}>
+              Request a Meet & Greet!
             </button>
           </center>
         </div>

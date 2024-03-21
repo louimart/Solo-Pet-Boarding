@@ -5,7 +5,7 @@ import { useParams, useHistory } from 'react-router-dom';
 function RequestMeetNotice() {
   let { id } = useParams();
   const dispatch = useDispatch();
-  const meetRequest = useSelector((store) => store.meetRequest);
+  const meetRequest = useSelector((store) => store.RequestMeetReducer);
   const history = useHistory();
 
   useEffect(() => {

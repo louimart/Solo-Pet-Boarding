@@ -54,7 +54,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/requestForm"
+            path="/requestMeetForm"
           >
             <RequestMeetForm />
           </Route>
@@ -63,7 +63,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/requestNotice"
+            path="/requestMeetNotice"
           >
             <RequestMeetNotice />
           </Route>

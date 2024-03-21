@@ -14,27 +14,16 @@ function RequestMeetForm() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // const requestMeet = (event) => {
-  //   event.preventDefault();
-
-  //   dispatch({
-  //     type: 'REQUEST_MEET',
-  //     payload: {
-  //       dog: dog,
-  //       cat: cat,
-  //       firstName: firstName,
-  //       lastName: lastName,
-  //       email: email,
-  //       phone: phone,
-  //       details: details,
-  //     },
-  //   });
-  // };
-  // end requestMeet
-
-  // to go back to Home page (app.jsx)
-  const handleClickNotice = (event) => {
+  // SUBMIT FORM & go to NOTICE page (RequestMeetNotice.jsx)
+  const requestMeet = (event) => {
     event.preventDefault();
+
+// JAVASCRIPT form validation alternative
+//     function areAllFieldsNonNull(obj) {
+//     return Object.values(obj).every(value => value !== null);
+// }
+//     if (areAllFieldsNonNull===true){
+//     }
 
     // dispatching request information
     dispatch({
@@ -51,14 +40,11 @@ function RequestMeetForm() {
     });
 
     // routing to Request Notice Page.
-    history.push(`/requestNotice`);
+    history.push(`/requestMeetNotice`);
   };
 
   return (
-    <form
-      className="formPanel"
-      // onSubmit={requestMeet}
-    >
+    <form className="formPanel" onSubmit={requestMeet}>
       <h2>Request Meet & Greet</h2>
       <p>
         Please fill out the following information along with details of your
@@ -78,6 +64,7 @@ function RequestMeetForm() {
             id="dog"
             name="pet_type"
             value="dog"
+            required
             onChange={(event) => setDog(event.target.value)}
           />
           <label for="dog">Dog</label>
@@ -86,6 +73,7 @@ function RequestMeetForm() {
             id="cat"
             name="pet_type"
             value="cat"
+            required
             onChange={(event) => setCat(event.target.value)}
           />
           <label for="cat">Cat</label>
@@ -157,7 +145,6 @@ function RequestMeetForm() {
           type="submit"
           name="submit"
           value="Submit Request"
-          onClick={handleClickNotice}
         />
       </div>
     </form>

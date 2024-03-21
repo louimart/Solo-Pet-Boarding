@@ -14,7 +14,7 @@ function LandingPage() {
   };
 
   const onRequestMeet = (event) => {
-    history.push('/requestForm');
+    history.push('/requestMeetForm');
   };
 
   return (

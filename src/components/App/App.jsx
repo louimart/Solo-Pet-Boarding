@@ -89,6 +89,9 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+{/* TODO - ternary operator to check user.client_type and direct to ADMIN level or USER level pages. */}
+{/* check in Route, then Redirect to ProtectedRoute accordingly */}
+{/* use IF statement to check logged in or not, then redirect per client_type w argument */}
           <Route
             exact
             path="/login"

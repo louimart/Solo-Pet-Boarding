@@ -11,7 +11,7 @@ router.post('/request_meet', (req, res) => {
   const details = req.body.details;
 
   const queryText = `INSERT INTO "request_meet" (first_name, last_name, email, phone, details)
-    VALUES ($1, $2, $3, $4, $5) RETURNING id`;
+    VALUES ($1, $2, $3, $4, $5)`;
   pool
     .query(queryText, [
       firstName,

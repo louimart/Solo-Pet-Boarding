@@ -14,11 +14,31 @@ function RequestMeetForm() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const requestMeet = (event) => {
+  // const requestMeet = (event) => {
+  //   event.preventDefault();
+
+  //   dispatch({
+  //     type: 'REQUEST_MEET',
+  //     payload: {
+  //       dog: dog,
+  //       cat: cat,
+  //       firstName: firstName,
+  //       lastName: lastName,
+  //       email: email,
+  //       phone: phone,
+  //       details: details,
+  //     },
+  //   });
+  // };
+  // end requestMeet
+
+  // to go back to Home page (app.jsx)
+  const handleClickNotice = (event) => {
     event.preventDefault();
 
+    // dispatching request information
     dispatch({
-      type: 'REQUEST_MEET',
+      type: 'POST_REQUEST_MEET',
       payload: {
         dog: dog,
         cat: cat,
@@ -29,16 +49,16 @@ function RequestMeetForm() {
         details: details,
       },
     });
-  }; // end requestMeet
 
-  // to go back to Home page (app.jsx)
-  const handleClickNotice = (event) => {
-    event.preventDefault();
+    // routing to Request Notice Page.
     history.push(`/requestNotice`);
   };
 
   return (
-    <form className="formPanel" onSubmit={requestMeet}>
+    <form
+      className="formPanel"
+      // onSubmit={requestMeet}
+    >
       <h2>Request Meet & Greet</h2>
       <p>
         Please fill out the following information along with details of your
@@ -50,30 +70,27 @@ function RequestMeetForm() {
           {errors.registrationMessage}
         </h3>
       )}*/}
-      <div>
-        <label htmlFor="dog">
-          Dog:
+      <fieldset>
+        <legend>Please select pet type:</legend>
+        <div>
           <input
-            type="checkbox"
-            name="dog"
-            value={dog}
-            required
+            type="radio"
+            id="dog"
+            name="pet_type"
+            value="dog"
             onChange={(event) => setDog(event.target.value)}
           />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="cat">
-          Cat:
+          <label for="dog">Dog</label>
           <input
-            type="checkbox"
-            name="cat"
-            value={cat}
-            required
+            type="radio"
+            id="cat"
+            name="pet_type"
+            value="cat"
             onChange={(event) => setCat(event.target.value)}
           />
-        </label>
-      </div>
+          <label for="cat">Cat</label>
+          </div>
+      </fieldset>
       <div>
         <label htmlFor="first_name">
           First Name:

@@ -7,15 +7,15 @@ const requestMeetMessage = (state = '', action) => {
     case 'CLEAR_REQUEST_MEET_ERROR':
       return '';
     case 'REQUEST_MEET_FAILED':
-      return "Oops! The request didn't go through. Please try again!";
+      return "Oops! The Meet Request didn't go through. Please try again!";
     default:
       return state;
   }
 };
 
-// make one object that has keys loginMessage, registrationMessage
+// make one object
 // these will be on the redux state at:
-// state.errors.loginMessage and state.errors.registrationMessage
+// state.errors.requestMeetMessage
 export default combineReducers({
   requestMeetMessage,
 });

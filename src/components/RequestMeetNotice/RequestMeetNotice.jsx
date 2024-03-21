@@ -12,13 +12,9 @@ function RequestMeetNotice() {
     dispatch({ type: 'FETCH_MEET_REQUEST' });
   }, []);
 
-  // useEffect to dispatch FetchMovieDetails
-  useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIE_DETAILS', payload: id });
-  }, []);
-
   // to go back to Home page (app.jsx)
   const handleClickHome = (event) => {
+    console.log('testing', meetRequest)
     event.preventDefault();
     history.push(`/`);
   };

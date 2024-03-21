@@ -7,6 +7,7 @@ function* requestMeet(action) {
     yield put({ type: 'CLEAR_REQUEST_MEET_ERROR' });
     // passes the username and password from the payload to the server
     yield axios.post('/api/request_meet', action.payload);
+    console.log(action.payload);
   }
   catch (error) {
   console.log('Error with request Meet & Greet:', error);

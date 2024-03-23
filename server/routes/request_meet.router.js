@@ -38,7 +38,7 @@ router.post('/request_meet', (req, res) => {
 
   const queryText = `INSERT INTO "request_meet" (dog, cat, first_name, last_name, email, phone, details)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
-    RETURNING 'id'`;
+    RETURNING id`;
     const insertedValues = [
       dog,
       cat,
@@ -54,7 +54,9 @@ router.post('/request_meet', (req, res) => {
       const insertedId = result.rows[0].id;
       console.log('Inserted ID:', insertedId);
       // 201 successful POST
-      res.status(201).json({ message: 'Pet added successfully', id: insertedId });
+      // res.send(insertedId)
+      // res.sendStatus(201)
+      res.status(201).json({ id: insertedId });
     })
     .catch((err) => {
       console.log('Meet & Greet Request Failed: ', err);

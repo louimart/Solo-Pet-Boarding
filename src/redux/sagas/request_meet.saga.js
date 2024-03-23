@@ -8,7 +8,9 @@ function* requestMeet(action) {
     // passes the username and password from the payload to the server
     const response = yield axios.post('/api/request_meet', action.payload)
     if (response.status === 201) {
-      console.log('Response ID', response.data.id)
+      const requestMeetId = response.data.id;
+      console.log('Response ID', requestMeetId)
+      yield put({type: 'POST_REQUEST_MEET', payload: requestMeetId })
     }
     // .then(response => {console.log('response data', response.data)});
     // console.log('POST response', response);

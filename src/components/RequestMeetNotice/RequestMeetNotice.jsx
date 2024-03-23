@@ -5,11 +5,13 @@ import { useParams, useHistory } from 'react-router-dom';
 function RequestMeetNotice() {
   let { id } = useParams();
   const dispatch = useDispatch();
-  const meetRequest = useSelector((store) => store.RequestMeetNoticeReducer);
+  const meetRequestNotice = useSelector((store) => store.requestMeetNoticeReducer);
+  const meetRequest = useSelector((store) => store.requestMeetReducer);
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_MEET_REQUEST', payload: meetRequest });
+    // dispatch({ type: 'FETCH_MEET_REQUEST', payload: meetRequest });
+    console.log(meetRequest)
   }, []);
 
   // to go back to Home page (app.jsx)
@@ -25,6 +27,7 @@ function RequestMeetNotice() {
     <>
       <div className="container">
         <h2>Your request has been submitted!</h2>
+        <p>{JSON.stringify(meetRequest)}</p>
         {/* {meetRequest.map((request) => {
           return (
             <div

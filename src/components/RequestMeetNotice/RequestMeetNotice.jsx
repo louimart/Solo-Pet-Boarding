@@ -5,24 +5,39 @@ import { useParams, useHistory } from 'react-router-dom';
 function RequestMeetNotice() {
   let { id } = useParams();
   const dispatch = useDispatch();
-  const meetRequest = useSelector((store) => store.RequestMeetReducer);
+  const meetRequest = useSelector((store) => store.RequestMeetNoticeReducer);
   const history = useHistory();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_MEET_REQUEST' });
+    dispatch({ type: 'FETCH_MEET_REQUEST', payload: meetRequest });
   }, []);
 
   // to go back to Home page (app.jsx)
   const handleClickHome = (event) => {
-    console.log('testing', meetRequest)
+    console.log('testing', meetRequest);
     event.preventDefault();
     history.push(`/`);
   };
 
+  // console.log('meet request obj', meetRequest.firstName)
+
   return (
     <>
-      <div className='container'>
+      <div className="container">
         <h2>Your request has been submitted!</h2>
+        {/* {meetRequest.map((request) => {
+          return (
+            <div
+              // className="movie-item"
+              // data-testid="movieItem"
+              key={request.id}
+              onClick={handleClickToDetail}
+              id={request.id}
+            >
+              <h2>{request.firstName}</h2>
+            </div>
+          );
+        })}; */}
         <input
           className="btn"
           type="submit"

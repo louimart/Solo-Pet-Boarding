@@ -23,6 +23,7 @@ import RequestMeetForm from '../RequestMeetForm/RequestMeetForm';
 import RequestMeetNotice from '../RequestMeetNotice/RequestMeetNotice';
 
 import './App.css';
+import RegisterPetForm from '../RegisterPetForm/RegisterPetForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -89,6 +90,15 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+          <ProtectedRoute
+            // Newly Registered shows Pet Registration Form.
+            exact
+            path="/registerPet"
+          >
+            {/* check is_admin at page level */}
+            <RegisterPetForm />
+          </ProtectedRoute>
+
 {/* TODO - ternary operator to check user.client_type and direct to ADMIN level or USER level pages. */}
 {/* check in Route, then Redirect to ProtectedRoute accordingly */}
 {/* use IF statement to check logged in or not, then redirect per client_type w argument */}
@@ -97,7 +107,7 @@ function App() {
             path="/login"
           >
             {user.id ?
-              // If the user is already logged in, 
+              // If the user is already logged in,
               // redirect to the /user page
               <Redirect to="/user" />
               :
@@ -111,7 +121,7 @@ function App() {
             path="/registration"
           >
             {user.id ?
-              // If the user is already logged in, 
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/user" />
               :
@@ -125,7 +135,7 @@ function App() {
             path="/home"
           >
             {user.id ?
-              // If the user is already logged in, 
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/user" />
               :

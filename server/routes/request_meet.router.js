@@ -37,8 +37,7 @@ router.post('/request_meet', (req, res) => {
 // console.log('is Cat ?', cat);
 
   const queryText = `INSERT INTO "request_meet" (dog, cat, first_name, last_name, email, phone, details)
-    VALUES ($1, $2, $3, $4, $5, $6, $7)
-    RETURNING id`;
+    VALUES ($1, $2, $3, $4, $5, $6, $7)`;
     const insertedValues = [
       dog,
       cat,

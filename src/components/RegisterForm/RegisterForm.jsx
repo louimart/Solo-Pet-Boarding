@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function RegisterForm() {
   const [username, setUsername] = useState('');
@@ -12,8 +13,10 @@ function RegisterForm() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [userType, setUserType] = useState('client');
+
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const registerUser = (event) => {
     event.preventDefault();
@@ -33,6 +36,9 @@ function RegisterForm() {
         state: state,
       },
     });
+
+    history.push(`/registerPet`);
+
   }; // end registerUser
 
   return (

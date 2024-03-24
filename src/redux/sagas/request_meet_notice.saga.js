@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* requestMeetNotice(action) {
   try {
-    // Get the movie details
+    // Get the Meet Request
     const requestMeetResponse = yield axios.get(
       `/api/request_meet/${action.payload}`
     );

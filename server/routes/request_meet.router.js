@@ -50,11 +50,10 @@ router.post('/request_meet', (req, res) => {
     console.log('Inserted Values', insertedValues);
     pool.query(queryText, insertedValues)
     .then(result => {
+      // checking for ID of submitted Meet Request by returning the ID back from database.
       const insertedId = result.rows[0].id;
       console.log('Inserted ID:', insertedId);
       // 201 successful POST
-      // res.send(insertedId)
-      // res.sendStatus(201)
       res.status(201).json({ id: insertedId });
     })
     .catch((err) => {

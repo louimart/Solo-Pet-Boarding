@@ -5,20 +5,18 @@ function* requestMeet(action) {
   try {
     // clear any existing error on the request page
     yield put({ type: 'CLEAR_REQUEST_MEET_ERROR' });
-    // passes the username and password from the payload to the server
+    // passes the Meet Request data from the payload to the server
     const response = yield axios.post('/api/request_meet', action.payload)
+    // returns the posted Meet Request data's ID.
     if (response.status === 201) {
       const requestMeetId = response.data.id;
       console.log('Response ID', requestMeetId)
       yield put({type: 'POST_REQUEST_MEET', payload: requestMeetId })
     }
-    // .then(response => {console.log('response data', response.data)});
-    // console.log('POST response', response);
-    // console.log('submitted for POST', action.payload);
   }
   catch (error) {
   console.log('Error with request Meet & Greet:', error);
-  // yield put({ type: 'REQUEST_MEET_FAILED' });
+  yield put({ type: 'REQUEST_MEET_FAILED' });
   }
 };
 

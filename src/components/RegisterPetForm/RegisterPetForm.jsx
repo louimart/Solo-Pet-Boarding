@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+// const [isDog, setIsDog] = useState('false');
+
 function RegisterPetForm() {
   const [dog, setDog] = useState('');
   const [cat, setCat] = useState('');
@@ -31,15 +33,16 @@ function RegisterPetForm() {
       },
     });
 
+    // clear radio buttons
+    document.getElementById('dog').checked = false;
+    document.getElementById('cat').checked = false;
     // clear form fields
-    setDog(''),
-    setCat(''),
-    setPetName(''),
-    setBreed(''),
-    setAge(''),
-    setWeight(''),
-    setDetail('')
+    setPetName(''), setBreed(''), setAge(''), setWeight(''), setDetail('');
   };
+
+  function handleClickDog() {
+    setIsDog('true');
+  }
 
   return (
     <div className="container">
@@ -53,6 +56,15 @@ function RegisterPetForm() {
         )}
         <fieldset>
           <legend>Please select pet type:</legend>
+          {/* <div>
+            <input
+              className="btn"
+              type="button"
+              name="button"
+              value="Dog"
+              onClick={handleClickDog()}
+            />
+          </div> */}
           <div>
             <input
               type="radio"
@@ -134,13 +146,17 @@ function RegisterPetForm() {
             />
           </label>
         </div>
+        {/* <div>
+          <h2>Vaccines</h2>
+          <h3>{`${isDog}`}</h3>
+        </div> */}
         <div>
           <input className="btn" type="submit" name="submit" value="Add Pet" />
         </div>
       </form>
       <div>
-          <input className="btn" type="submit" name="submit" value="Next" />
-        </div>
+        <input className="btn" type="submit" name="submit" value="Next" />
+      </div>
     </div>
   );
 }

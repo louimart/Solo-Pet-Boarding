@@ -23,8 +23,6 @@ function RequestMeetNotice() {
     history.push(`/`);
   };
 
-  // console.log('meet request obj', meetRequest.firstName)
-
   return (
     <>
       <div className="container">

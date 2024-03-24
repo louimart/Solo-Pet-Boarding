@@ -4,17 +4,17 @@ import { useParams, useHistory } from 'react-router-dom';
 
 function RequestMeetNotice() {
   let { id } = useParams();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const meetRequestNotice = useSelector(
     (store) => store.requestMeetNoticeReducer
   );
   const meetRequest = useSelector((store) => store.requestMeetReducer);
   const history = useHistory();
 
-  useEffect(() => {
-    // dispatch({ type: 'FETCH_MEET_REQUEST', payload: meetRequest });
-    console.log(meetRequest);
-  }, []);
+  // useEffect(() => {
+  //   dispatch({ type: 'FETCH_MEET_REQUEST', payload: meetRequest });
+  //   console.log(meetRequest);
+  // }, []);
 
   // to go back to Home page (app.jsx)
   const handleClickHome = (event) => {

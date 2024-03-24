@@ -95,7 +95,6 @@ function App() {
             exact
             path="/registerPet"
           >
-            {/* check is_admin at page level */}
             <RegisterPetForm />
           </ProtectedRoute>
 

@@ -22,7 +22,7 @@ function RegisterPetForm() {
     dispatch({
       type: 'REGISTER_PET',
       payload: {
-        userId: user.id,
+        // userId: user.id,
         dog: dog,
         cat: cat,
         petName: petName,
@@ -37,12 +37,12 @@ function RegisterPetForm() {
     document.getElementById('dog').checked = false;
     document.getElementById('cat').checked = false;
     // clear form fields
-    setPetName(''), setBreed(''), setAge(''), setWeight(''), setDetail('');
+    setDog(''), setCat(''), setPetName(''), setBreed(''), setAge(''), setWeight(''), setDetail('');
   };
 
-  function handleClickDog() {
-    setIsDog('true');
-  }
+  // function handleClickDog() {
+  //   setIsDog('true');
+  // }
 
   return (
     <div className="container">

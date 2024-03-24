@@ -4,6 +4,8 @@ import user from './user.reducer';
 import requestMeetNoticeReducer from './request_meet_notice.reducer'
 import requestMeetReducer from './request_meet.reducer';
 import requestMeetMessage from './errors.request_meet.reducer';
+import registerPetReducer from './register_pet.reducer';
+
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -15,7 +17,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   requestMeetMessage,
   requestMeetNoticeReducer,
-  requestMeetReducer,
+  requestMeetReducer, //contains client submitted Meet & Greet info
+  registerPetReducer, //contains registered pet info
 });
 
 export default rootReducer;

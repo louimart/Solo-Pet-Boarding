@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import requestMeetSaga from './request_meet.saga';
 import requestMeetNoticeSaga from './request_meet_notice.saga';
+import registerPetSaga from './register_pet.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -17,7 +18,8 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    requestMeetSaga(),
+    requestMeetSaga(), // to send Meet & Greet request to server and set requestMeetReducer with returned result
     requestMeetNoticeSaga(),
+    registerPetSaga(), // to send Pet registration info to server.
   ]);
 }

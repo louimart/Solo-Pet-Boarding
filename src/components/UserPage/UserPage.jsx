@@ -14,16 +14,6 @@ function UserPage() {
         <h2>Hello, {user.username}!</h2>
         <p>Your ID is: {user.id}</p>
         <p>User Type: {user.user_type}</p>
-        <p>
-        {/* <div>
-          <h3>First Name: {meetRequest.firstName}</h3>
-          <h3>Last Name: {meetRequest.lastName}</h3>
-          <h3>Email: {meetRequest.email}</h3>
-          <h3>Phone: {meetRequest.phone}</h3>
-          <h3>Details:</h3>
-          <p>{meetRequest.details}</p>
-        </div> */}
-        </p>
         <LogOutButton className="btn" />
       </div>
     );

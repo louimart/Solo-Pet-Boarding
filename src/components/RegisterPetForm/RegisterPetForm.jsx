@@ -22,7 +22,7 @@ function RegisterPetForm() {
     dispatch({
       type: 'REGISTER_PET',
       payload: {
-        // userId: user.id,
+        userId: user.id,
         dog: dog,
         cat: cat,
         petName: petName,

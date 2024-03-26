@@ -21,9 +21,10 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import RequestMeetForm from '../RequestMeetForm/RequestMeetForm';
 import RequestMeetNotice from '../RequestMeetNotice/RequestMeetNotice';
+import RegisterPetForm from '../RegisterPetForm/RegisterPetForm';
+import AdminUserPage from '../AdminUserPage/AdminUserPage';
 
 import './App.css';
-import RegisterPetForm from '../RegisterPetForm/RegisterPetForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -79,6 +80,15 @@ function App() {
             path="/user"
           >
             <UserPage />
+          </ProtectedRoute>
+
+          {/* ADMIN USER PAGE */}
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/adminUser"
+          >
+            <AdminUserPage />
           </ProtectedRoute>
 
           <ProtectedRoute

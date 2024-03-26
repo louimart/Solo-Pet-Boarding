@@ -22,7 +22,7 @@ function RegisterPetForm() {
     dispatch({
       type: 'REGISTER_PET',
       payload: {
-        // userId: user.id,
+        userId: user.id,
         dog: dog,
         cat: cat,
         petName: petName,
@@ -74,7 +74,7 @@ function RegisterPetForm() {
               required
               onChange={(event) => setDog(event.target.value)}
             />
-            <label for="dog">Dog</label>
+            <label htmlFor="dog">Dog</label>
             <input
               type="radio"
               id="cat"
@@ -83,7 +83,7 @@ function RegisterPetForm() {
               required
               onChange={(event) => setCat(event.target.value)}
             />
-            <label for="cat">Cat</label>
+            <label htmlFor="cat">Cat</label>
           </div>
         </fieldset>
         <div>

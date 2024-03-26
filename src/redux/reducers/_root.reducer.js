@@ -5,6 +5,7 @@ import requestMeetNoticeReducer from './request_meet_notice.reducer'
 import requestMeetReducer from './request_meet.reducer';
 import requestMeetMessage from './errors.request_meet.reducer';
 import registerPetReducer from './register_pet.reducer';
+import petsReducer from './pets.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   requestMeetNoticeReducer,
   requestMeetReducer, //contains client submitted Meet & Greet info
   registerPetReducer, //contains registered pet info
+  petsReducer, //contains user pets info
 });
 
 export default rootReducer;
